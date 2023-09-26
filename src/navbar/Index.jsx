@@ -5,8 +5,8 @@ import sidebar from '../assets/img/sidebar.png'
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="container-fluid">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary" >
+            <div className="container-fluid" >
                 <div className="row">
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
