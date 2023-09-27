@@ -1,0 +1,29 @@
+.auth-wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.auth-wrapper .left {
+    width: 60%;
+    /* padding: 30px; */
+    
+    background-image: url("../../assets/img/login logout image.png") !important;
+}
+
+.auth-wrapper .right {
+    flex: 1;
+    background-color: aliceblue !important;
+    
+}
+
+.text-left1{
+    color: aliceblue;
+    font-size: 50px ;
+    padding-top: 100px;
+    padding-left: 100px;
+}
+.text-left2{
+    font-size: 50px;
+    color: white;
+    padding-left: 100px;
+}

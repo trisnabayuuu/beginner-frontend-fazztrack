@@ -1,0 +1,58 @@
+
+.submitlogin {
+    outline: none;
+    border: none;
+    padding: 5px 16px;
+    border-radius: 4px;
+    border-color: darkgray;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+button.submitsignUp {
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto;
+    /* display: flex; */
+    /* -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px; */
+}
+.submitlogin:hover {
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.submitsignUp:hover{
+        background-color: black;
+        color: white;
+}
+
+.policytext1{
+    margin-top:60px;
+    color: #D0CCCC;
+}
+
+.form-check{
+    display: flex !important;
+    justify-content: space-between !important;
+    padding-bottom: 40px
+}
+a{
+    text-decoration: none !important;
+    color: black !important;
+    justify-content: space-between !important;
+}
