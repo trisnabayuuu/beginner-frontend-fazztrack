@@ -1,9 +1,41 @@
-import React from 'react'
+import { useState } from 'react'
 import LayoutAuth from '../../../layouts/auth/Index'
 import FromLogin from '../../../form/login/Index'
 import '../login/Login.css'
 
-const Login = () => {
+
+function Login() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = async () => {
+        console.log('Username:', username);
+        console.log('Password:', password);
+        try {
+            const response = await fetch('http://127.0.0.1:9010/users/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                console.log('Login successful');
+                // direct ke homepage
+            } else {
+
+                setError(data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setError('An error occurred while logging in.');
+        }
+    };
+
+
     return (
         <LayoutAuth>
             <div>
@@ -11,7 +43,12 @@ const Login = () => {
                 <h6>welcome back, please login</h6>
                 <h6 class="gapform">to your account</h6>
 
-                <FromLogin />
+                <FromLogin
+                    username={username}
+                    password={password}
+                    setUsername={setUsername}
+                    setPassword={setPassword}
+                />
 
                 <div >
                     <div className="form-check">
@@ -26,7 +63,7 @@ const Login = () => {
                         </div>
                     </div>
                     <div >
-                        <button className="submitlogin" onClick={() => { }}>Login</button>
+                        <button className="submitlogin" onClick={handleLogin}>Login</button>
                         <button className="submitsignUp" onClick={() => { }}>SignUp</button>
                     </div>
                     <div >

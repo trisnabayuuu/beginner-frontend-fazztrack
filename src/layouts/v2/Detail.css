@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.detailcontainer {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    background-color: rgb(247, 242, 242);
+}
+.top {
+    height: 65%;
+    flex: 1;
+    background-image: url("../src/dilan\ top\ bg.png");
+    background-size: cover;
+    /* background-position: center; */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 10px;
+    /* justify-content: right; */
+}
+
+
+.bottom .borrowmodal{
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+.modal .modal-header{
+    border: none !important;
+}
+
+.modal .modal-footer{
+    border: none !important;
+}
+
+.topbutton{
+    display: flex; 
+    justify-content: space-between;
+}
+
+.top .topedit{
+    margin-right: 15px;
+    color: #FFFFFF;
+}
+.top .topdelete{
+    margin-right: 30px;
+    color: #FFFFFF;
+}
+
+.bottom .stock{
+    color: #99D815;
+    margin-left: 333px;
+}
+
+.bottom .bottomtitle{
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.modal-input{
+    /* display: flex !important; */
+    width: 100%;
+    justify-content: right !important;
+    font-size: 18px !important;
+    border-color: #00000080;
+    padding-left: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+a{
+    text-decoration: none !important;
+}
+
+.dropup .hide-toggle.dropdown-toggle::after {
+    display: none !important;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    flex: 1;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    flex: 2;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.imagedelete .textdelete{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.imgdelete img {
+    max-width: 100px; 
+}
+.detailisi{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.paragrafdilan{
+    margin-left: 30px; margin-top: 30px;
+    margin-right: 20%;
+}
