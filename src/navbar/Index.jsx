@@ -13,9 +13,7 @@ const Navbarview = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container fluid>
-                <div>
-
-                </div>
+                
                 <SideBar/>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">

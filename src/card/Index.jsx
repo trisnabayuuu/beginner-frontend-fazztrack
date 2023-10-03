@@ -12,6 +12,7 @@ const Cardview = () => {
     
     const fetchBooks = () => {
         fetch('http://127.0.0.1:9010/book?deleted=false')
+        // fetch('http://127.0.0.1:9010/book')
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
@@ -26,15 +27,15 @@ const Cardview = () => {
             });
     };
 
-    // Panggil metode fetchBooks() saat komponen pertama kali dimuat (componentDidMount)
+    // Panggil metode fetchBooks() saat komponen pertama kali dimuat 
     useEffect(() => {
         fetchBooks();
     }, []);
 
     const navigateTo = useNavigate();
     const routeDetail = (id) => {
-        navigateTo(`/detail/${id}`); // Navigate to the detail page with the 'id' parameter
-      };
+        navigateTo(`/detail/${id}`); // Navigasi ke detail
+    };
 
     const cardStyle = {
         width: '18rem',

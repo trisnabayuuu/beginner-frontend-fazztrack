@@ -12,6 +12,9 @@ function SideBar() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const username = localStorage.getItem("username");
+    // const logout = localStorage.clear();
+
     return (
         <>
             <Button className='sidebar-button' onClick={handleShow}            >
@@ -25,7 +28,8 @@ function SideBar() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <Avatar className="avatar" />
-                    <h1 className='username'>nama</h1>
+                    <h1 className='username'>{username}</h1>
+                    {/* <button onClick={logout}>logout</button> */}
                     <h4 className="isisidebar" href="">Explore</h4>
                     <h4 className="isisidebar" href="">History</h4>
                     <AddModal />

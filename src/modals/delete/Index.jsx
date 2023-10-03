@@ -1,35 +1,57 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import { useParams } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
+import deletebutton from "../../assets/img/checked.png"
 
-function AddModal() {
+function DeleteModal() {
     const [show, setShow] = useState(false);
+    const { id } = useParams();
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+    };
     const handleShow = () => setShow(true);
+
+    const deleteBook = async () => {
+        try {
+            const response = await fetch(`http://127.0.0.1:9010/book/${id}`, {
+                method: 'DELETE',
+            });
+            if (response.ok) {
+                const responseData = await response.json();
+                console.log(responseData.message);
+                alert(responseData.message); 
+                handleClose();
+            } else {
+                console.error(`Error deleting book with id ${id}`);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
     return (
         <>
-            <Button onClick={handleShow}>
-                Launch demo modal
-            </Button>
+            <a type="button" style={{ margin: "10px" }} id="" onClick={handleShow}>
+                Delete
+            </a>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                <Modal.Body> 
+                    {/* icon delete */}
+                    <img style={{ display: "block", marginLeft: "auto", marginRight: "auto", width: "25%" }} src={deletebutton} alt="" />
+                    <h2 style={{ textAlign: "center", marginTop: "10px" }}>Data telah dihapus</h2>
+                </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                    </Button>
+                    <button className="btn btn-warning" onClick={deleteBook}>
+                        Confirm Delete
+                    </button>
                 </Modal.Footer>
             </Modal>
         </>
     );
 }
 
-export default AddModal;
+export default DeleteModal;
