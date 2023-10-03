@@ -27,3 +27,23 @@
     color: white;
     padding-left: 100px;
 }
+
+@media screen and (max-width: 760px) {
+    .auth-wrapper .left{
+        display: none;
+    }
+
+    .auth-wrapper .right {
+        background-image: url("../../assets/img/login logout image.png");
+    }
+
+    .auth-wrapper .right .title {
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* .form-container {
+        background-color: white;
+        width: 70%;
+    } */
+}

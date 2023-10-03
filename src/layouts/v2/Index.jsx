@@ -11,29 +11,34 @@ import DeleteModal from "../../modals/delete/Index";
 const LayoutDetail = ({ book }) => {
     const { id } = useParams();
     const [detail, setDetail] = useState({});
+    const [image, setImage] = useState({});
 
     const navigateregis = useNavigate();
     const routeHome = () => {
         navigateregis(`/`);
     };
 
-    useEffect(() => {
-        const fetchBook = async () => {
-            try {
-                const response = await fetch(`http://127.0.0.1:9010/book/${id}`);
-                if (response.ok) {
-                    const data = await response.json();
-                    setDetail(data);
-                    console.log(data)
-                } else {
-                    console.error(`Error  ${id}`);
-                }
-            } catch (error) {
-                console.error('Error:', error);
+    
+    const fetchBook = async () => {
+        try {
+            const response = await fetch(`http://127.0.0.1:9010/book/${id}`);
+            if (response.ok) {
+                const data = await response.json();
+                setDetail(data);
+                // console.log(data.data.imageUrl);
+                setImage(data.data?.imageUrl);
+                console.log(data)
+            } else {
+                console.error(`Error  ${id}`);
             }
-        };
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+    useEffect(() => {
         fetchBook();
     }, [id]);
+
 
     const borrowbook = async () => {
         try {
@@ -42,8 +47,8 @@ const LayoutDetail = ({ book }) => {
             });
             if (response.ok) {
                 const responseData = await response.json();
-                console.log(responseData.message);
-                alert(responseData.message); 
+                // console.log(responseData.message);
+                alert(responseData.message);
             } else {
                 console.error(`Error borrowed book with id ${id}`);
             }
@@ -53,8 +58,9 @@ const LayoutDetail = ({ book }) => {
     };
 
     return (
+
         <main className="detailcontainer">
-            <section className="top" style={{ backgroundImage: "" }}>
+            <section className="top" style={{ backgroundImage: `url(${image})` }}>
                 <div>
                     <img src={backbutton} alt="back..." onClick={routeHome} />
                 </div>
@@ -88,6 +94,7 @@ const LayoutDetail = ({ book }) => {
                 </div>
             </section>
         </main>
+        
     );
 };
 

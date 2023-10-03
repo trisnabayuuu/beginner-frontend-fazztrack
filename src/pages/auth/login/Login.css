@@ -56,3 +56,16 @@ a{
     color: black !important;
     justify-content: space-between !important;
 }
+
+@media screen and (max-width: 760px) {
+    .login-title{
+        color: aliceblue;
+    }
+    .gapform{
+        color: aliceblue;
+    }
+    .label{
+        color: aliceblue;
+    }
+
+}

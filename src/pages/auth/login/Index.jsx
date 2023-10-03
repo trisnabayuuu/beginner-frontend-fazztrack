@@ -60,9 +60,9 @@ function Login() {
     return (
         <LayoutAuth>
             <div>
-                <h2 class="login-title">Login</h2>
-                <h6>welcome back, please login</h6>
-                <h6 class="gapform">to your account</h6>
+                <h2 className="login-title">Login</h2>
+                <h6 className="gapform">welcome back, please login</h6>
+                <h6 className="gapform">to your account</h6>
 
                 {/* <FromLogin
                     username={username}
@@ -73,7 +73,7 @@ function Login() {
 
                 <Form>
                     <Form.Group className="mb-3" controlId="username">
-                        <Form.Label>Username</Form.Label>
+                        <Form.Label className='label'>Username</Form.Label>
                         <Form.Control type="text"
                             placeholder="username"
                             value={username}

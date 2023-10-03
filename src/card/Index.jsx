@@ -51,7 +51,7 @@ const Cardview = () => {
         <Row >
             {book.map((book) => (
             <Col key={book.id} xs={12} sm={6} md={4}>
-                <Card style={cardStyle}>
+                <Card style={cardStyle} onClick={() => routeDetail(book.id)}>
                     <Card.Img variant="top" src={book.imageUrl} />
                     <Card.Body>
                         <Card.Title>
@@ -61,7 +61,7 @@ const Cardview = () => {
                         <Card.Text style={descriptionStyle}>
                             {book.description}
                         </Card.Text>
-                        <Button variant="primary" onClick={() => routeDetail(book.id)}>Go somewhere</Button>
+                        {/* <Button variant="primary" >Go somewhere</Button> */}
                     </Card.Body>
                 </Card>
             </Col>
